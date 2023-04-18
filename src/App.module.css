@@ -1,1 +1,18 @@
+.App {
+  padding: 2rem;
+}
+.header {
+  text-align: center;
+}
 
+.table {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.tableMain {
+  display: flex;
+  justify-content: space-between;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
