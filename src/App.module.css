@@ -1,18 +1,84 @@
 .App {
-  padding: 2rem;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 .header {
   text-align: center;
 }
 
+.header h3 {
+  color: #456db9;
+  margin-bottom: 10px;
+}
+
+h4 {
+  /* content: ""; */
+  height: 2rem;
+  padding: 5px 10px;
+  display: grid;
+  align-items: center;
+}
+
 .table {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  margin-top: 3rem;
 }
 
 .tableMain {
   display: flex;
-  justify-content: space-between;
   grid-column-start: 2;
   grid-column-end: 5;
+  text-align: center;
+}
+
+.tableCol {
+  padding: 8px 0;
+}
+
+.tableMain .tableCol {
+  border-radius: 10px;
+  flex: 1;
+}
+
+.tableCol.colActive {
+  border: 2px solid #456db9;
+  padding: 6px 0;
+}
+
+.colActive h4 {
+  color: #456db9;
+}
+
+.tableCol p {
+  padding: 5px 10px;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.tableMain p {
+  justify-content: center;
+}
+
+.tableCol p:nth-of-type(2n + 1) {
+  background-color: #f9fbfc;
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 3rem 1rem 1rem;
+  }
+  h4 {
+    word-break: break-all;
+    height: 3rem;
+    padding: 5px;
+  }
+
+  h4,
+  p {
+    font-size: 13px;
+  }
 }

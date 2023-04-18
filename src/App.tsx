@@ -6,7 +6,7 @@ const App: Component = () => {
   return (
     <div class={styles.App}>
       <header class={styles.header}>
-        <p>Jay Institute of Technology</p>
+        <h3>Jay Institute of Technology</h3>
         <h1>Results for First Semester</h1>
       </header>
 

@@ -1,5 +1,5 @@
 import styles from "../App.module.css";
-import { For, Index, createMemo } from "solid-js";
+import { For, Index, createMemo, createSignal } from "solid-js";
 
 type studentData = {
   _studentId: number;
@@ -147,6 +147,8 @@ const tableData: studentData[] = [
 ];
 
 const Table = () => {
+  const [activeCol, setActiveCol] = createSignal(1);
+
   const allSubjects = createMemo(() => {
     const subjectArr: string[] = [];
 
@@ -167,21 +169,26 @@ const Table = () => {
     const currScore = student.subjects.filter(
       (sub) => sub._subjectId === subjectID
     );
-    console.log(currScore);
+
     return currScore.length === 0 ? "-" : currScore[0].score;
   };
 
   return (
     <div class={styles.table}>
-      <div>
-        <p> - </p>
+      <div class={styles.tableCol}>
+        <h4></h4>
         <For each={tableData}>{(student) => <p>{student._name}</p>}</For>
       </div>
 
       <div class={styles.tableMain}>
         <For each={allSubjects()}>
           {(subject) => (
-            <div>
+            <div
+              class={`${styles.tableCol} ${
+                activeCol() === subject._subjectId ? styles.colActive : null
+              }`}
+              onClick={() => setActiveCol(subject._subjectId)}
+            >
               <h4>{subject._name}</h4>
               {
                 <For each={tableData}>
