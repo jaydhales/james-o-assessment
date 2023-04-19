@@ -1,14 +1,5 @@
 import styles from "../App.module.css";
-import {
-  For,
-  Index,
-  JSX,
-  createEffect,
-  createMemo,
-  createSignal,
-  onCleanup,
-  onMount,
-} from "solid-js";
+import { For, createSignal, onMount } from "solid-js";
 
 type studentData = {
   _studentId: string;
@@ -53,7 +44,7 @@ const Table = () => {
     const currScore = student.subjects.filter(
       (sub) => sub._subjectId === subjectID
     );
-    return currScore.length === 0 ? "-" : currScore[0].score;
+    return currScore.length === 0 ? <span>—</span> : currScore[0].score;
   };
 
   return (
