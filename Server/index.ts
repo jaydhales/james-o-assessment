@@ -11,4 +11,6 @@ app.use("/api/grades", gradeRoute);
 app.use("/api/subjects", subjectRoute);
 app.use("/api/student/:id", studentRoute);
 
-app.listen(5000);
+app.listen(3000, () => {
+  console.log(`Server running at http://localhost:${3000}/`);
+});
