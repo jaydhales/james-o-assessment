@@ -33,9 +33,8 @@ const Table = () => {
   // });
 
   onMount(async () => {
-    const apiUrl = "https://james-o-assessment-production.up.railway.app/api/";
-    const res = await fetch(apiUrl + "subjects");
-    const gradeRes = await fetch(apiUrl + "grades");
+    const res = await fetch("/api/subjects");
+    const gradeRes = await fetch("/api/grades");
 
     setSubjects(await res.json());
     setTableData(await gradeRes.json());

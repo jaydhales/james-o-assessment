@@ -10,7 +10,7 @@ To run the server, navigate to the `Server` directory and run the following comm
 
 ### npm run dev
 
-Then, open your browser or postman and visit `http://localhost:5000` to view the server.
+Then, open your browser or postman and visit `http://localhost:3172` to view the server.
 
 ## Available Routes
 

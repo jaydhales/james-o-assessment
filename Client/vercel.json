@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    {
+      "source": "/api",
+      "destination": "https://james-o-assessment.vercel.app"
+    }
+  ]
+}
